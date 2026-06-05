@@ -1,0 +1,48 @@
+# =====================================================================
+# .gitignore — Proyecto clasificación de calidad de frutas
+# =====================================================================
+
+# --- Dataset (pesado: ~3.3 GB, NO se versiona) ---
+# Ver README.md para instrucciones de cómo obtener/colocar el dataset.
+/Fruits/
+
+# --- Entornos virtuales ---
+.venv/
+venv/
+env/
+ENV/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.Python
+build/
+dist/
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
+# --- Artefactos de experimentos (pesados / regenerables) ---
+# Se ignoran checkpoints y logs; los resultados ligeros (métricas, figuras)
+# pueden versionarse selectivamente con `git add -f` si se desea.
+experiments/checkpoints/
+experiments/logs/
+*.h5
+*.keras
+*.pkl
+*.joblib
+
+# --- Sistema operativo / editores ---
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# --- Datos procesados intermedios ---
+data/processed/
+*.npy
+*.npz
+/Docs

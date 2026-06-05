@@ -1,83 +1,96 @@
-____________________________________________________________________________________
+# Clasificación Automática de Calidad de Frutas por Visión por Computadora
 
+Proyecto Final del curso **Algoritmos y Programación III** — Ingeniería de
+Sistemas, Universidad ICESI, semestre **2026-1**.
 
-# Project Template
-This is the template for the Project I course at the IA Master, Universidad Icesi, Cali Colombia
+## Estado del proyecto
+🟢 **En desarrollo** — Sección 0 (Setup y exploración del dataset) completada.
 
-This template is based on the template proposed by the [Data Science Working Group] (https://github.com/sfbrigade/data-science-wg) Code for the [San Francisco’s Code initiative](https://github.com/sfbrigade/data-science-wg) 
+## Descripción
 
-*Instructions: Edit this template filling in the titles, information, and links! Feel free to stray a bit to suit your project but try to provide the main information for reviews and feedback purposes.*
-## Remove this table after updating your project's information
-____________________________________________________________________________________
+Sistema automático que clasifica imágenes de **una fruta individual** (sobre
+fondo simple) según su **calidad** y estima su **tamaño**. Busca apoyar a
+mercados y agroindustrias, donde la clasificación manual de productos frescos
+es lenta, subjetiva y propensa a errores, generando pérdidas económicas y
+desperdicio de alimentos.
 
-# Project Name
-This project is a part of the  **Proyecto 1 de Innovación Tecnológica** course in the Applied Artificial Intelligence Master, Universidad Icesi, Cali Colombia. 
+- **Entrada:** imagen estática de una fruta/verdura sobre fondo uniforme.
+- **Salidas:**
+  1. **Clase de calidad:** `Bad` / `Regular` / `Good` (3 categorías).
+  2. **Estimación de tamaño:** pequeño / mediano / grande.
+- **Despliegue:** interfaz gráfica (Streamlit) con carga/captura de imagen.
 
-#### -- Project Status: [Active, On-Hold, Completed]
+## Metodología
 
-## Contributing Members
+El proyecto sigue **CRISP-DM**, documentando cada fase: comprensión del negocio
+y de los datos, preparación, modelado, evaluación y despliegue.
 
-**Team Leader: [Full Name](https://github.com/[github handle])(@slackHandle)**
-**Instructor: [Full Name](https://github.com/[github handle])(@slackHandle)**
+## Modelos
 
-#### Other Members:
+- **≥2 modelos de ML tradicional** (con ajuste de hiperparámetros vía
+  validación cruzada / grid search), sobre características extraídas de las
+  imágenes (histogramas de color, HOG, momentos, etc.).
+- **1 modelo de Deep Learning**: CNN pequeña entrenada preferiblemente desde
+  cero (TensorFlow/Keras).
+- Comparación contra una **línea base** y entre modelos.
 
-|Name     |  Email   | 
-|---------|-----------------|
-|[Full Name](https://github.com/[github handle])| @johnDoe        |
-|[Full Name](https://github.com/[github handle]) |     @janeDoe    |
+## Dataset
 
-## Contact
-* Feel free to contact the team leader or the instructor with any questions or if you are interested in contributing!
+Basado en *Fruit Quality Classification* (Kaggle) + recolección propia del
+grupo. **No se versiona en Git** por su tamaño (~3,3 GB). Estructura esperada:
 
+```
+Fruits/
+├── Bad Quality_Fruits/
+│   ├── Apple_Bad/  Banana_Bad/  Guava_Bad/  Lime_Bad/  Orange_Bad/  Pomegranate_Bad/
+├── Good Quality_Fruits/
+│   └── {Fruta}_Good/
+└── Regular Quality_Fruits/
+    └── {Fruta}_Regular/
+```
 
-## Project Intro/Objective
-The purpose of this project is ________. (Describe the main goals of the project and potential civic impact. Limit to a short paragraph, 3-6 Sentences)
+- **6 frutas:** Apple, Banana, Guava, Lime, Orange, Pomegranate.
+- **3 niveles de calidad:** Bad, Good, Regular.
+- **~9.515 imágenes** (jpg/jpeg/png), resoluciones heterogéneas.
 
-### Partner
-This section should be added when there's a partner institution 
-* [Name of Partner organization/Government department etc..]
-* Website for partner
-* Partner contact: [Name of Contact], [slack handle of contact if any]
-* If you do not have a partner leave this section out
+> ⚠️ Coloca la carpeta `Fruits/` en la raíz del proyecto antes de ejecutar.
 
-### Methods Used
-* Inferential Statistics
-* Machine Learning
-* Data Visualization
-* Predictive Modeling
-* etc.
+## Estructura del repositorio
 
-### Technologies
-* R 
-* Python
-* D3
-* PostGres, MySql
-* Pandas, jupyter
-* HTML
-* JavaScript
-* etc. 
+```
+.
+├── Docs/             # Lineamientos oficiales, rúbrica, plantilla IEEE
+├── src/
+│   ├── data/         # Carga y preprocesamiento (preprocess.py)
+│   ├── models/       # Definición de arquitecturas
+│   ├── training/     # Scripts de entrenamiento
+│   ├── evaluation/   # Validación y métricas
+│   ├── utils/        # Funciones auxiliares
+│   └── main.py       # Punto de entrada
+├── notebooks/        # Experimentación (EDA, pruebas)
+├── experiments/      # logs, checkpoints, results (métricas, gráficas)
+├── tests/            # Pruebas
+├── Fruits/           # Dataset (ignorado en Git)
+├── requirements.txt
+└── README.md
+```
 
-## Project Description
-(Provide a more detailed overview of the project.  Talk a bit about your data sources and what questions and hypotheses you are exploring. What specific data analysis/visualization and modeling work are you using to solve the problem? What blockers and challenges are you facing?  Feel free to number or bullet point things here)
+## Instalación
 
-## Getting Started
-Instructions for contributors
-1. Clone this repo (for help see this [tutorial](https://help.github.com/articles/cloning-a-repository/)).
-2. Raw Data is being kept [here](Repo folder containing raw data) within this repo.
+```bash
+python -m venv .venv
+source .venv/bin/activate          # Linux/Mac
+pip install -r requirements.txt
+```
 
-    *If using offline data mention that and how contributors may obtain the data )*
-    
-3. Data processing/transformation scripts are being kept [here](Repo folder containing data processing scripts/notebooks)
-4. etc...
+## Equipo
 
-*If your project is well underway and setup is fairly complicated (ie. requires installation of many packages) create another "setup.md" file and link to it here*  
+| Nombre | Correo / Usuario |
+|--------|------------------|
+| _(por completar)_ | _(por completar)_ |
 
-5. Follow setup [instructions](Link to file)
+- **Profesor:** _(por completar)_
 
-## Featured Notebooks/Analysis/Deliverables
-* [Notebook/Markdown/Slide Deck Title](link)
-* [Notebook/Markdown/Slide DeckTitle](link)
-* [Blog Post](link)
+## Licencia
 
-
+Ver [LICENSE](LICENSE).

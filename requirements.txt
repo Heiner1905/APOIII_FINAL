@@ -1,0 +1,37 @@
+# =====================================================================
+# Dependencias del proyecto: Clasificación de calidad de frutas (visión)
+# Curso: Algoritmos y Programación III - Universidad ICESI - 2026-1
+#
+# Framework de Deep Learning elegido: TensorFlow/Keras
+# Se recomienda usar un entorno virtual (venv/conda) con Python 3.10-3.11.
+# Las versiones están acotadas con límites superiores para favorecer la
+# reproducibilidad sin congelar parches menores.
+# =====================================================================
+
+# --- Cómputo numérico y manejo de datos ---
+numpy>=1.26,<2.1
+pandas>=2.1,<2.3
+
+# --- Visualización (gráficos para EDA y resultados) ---
+matplotlib>=3.8,<3.10
+seaborn>=0.13,<0.14
+
+# --- Procesamiento de imágenes / visión por computadora ---
+opencv-python>=4.9,<4.11
+scikit-image>=0.22,<0.25   # HOG, momentos, descriptores
+Pillow>=10.2,<11.0
+
+# --- Machine Learning tradicional ---
+scikit-learn>=1.4,<1.6     # LogReg, KNN, SVM, RandomForest, GridSearchCV...
+xgboost>=2.0,<2.2
+
+# --- Deep Learning ---
+tensorflow>=2.15,<2.17     # CNN (Keras incluido)
+
+# --- Interfaz gráfica (despliegue) ---
+streamlit>=1.31,<1.40
+
+# --- Experimentación / notebooks ---
+jupyter>=1.0
+ipykernel>=6.29
+tqdm>=4.66                 # barras de progreso
