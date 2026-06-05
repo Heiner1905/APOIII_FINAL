@@ -59,21 +59,26 @@ Fruits/
 
 ```
 .
-├── Docs/             # Lineamientos oficiales, rúbrica, plantilla IEEE
-├── src/
-│   ├── data/         # Carga y preprocesamiento (preprocess.py)
+├── Docs/             # Lineamientos oficiales, rúbrica, plantilla IEEE (no versionado)
+├── src/              # Código fuente reutilizable (helpers importados por los notebooks)
+│   ├── data/         # Carga e indexado del dataset (dataset.py), preprocesamiento
 │   ├── models/       # Definición de arquitecturas
 │   ├── training/     # Scripts de entrenamiento
 │   ├── evaluation/   # Validación y métricas
 │   ├── utils/        # Funciones auxiliares
 │   └── main.py       # Punto de entrada
-├── notebooks/        # Experimentación (EDA, pruebas)
-├── experiments/      # logs, checkpoints, results (métricas, gráficas)
+├── notebooks/        # Notebooks por fase: CÓDIGO + figuras/resultados inline
+├── reports/          # Conclusiones por fase CRISP-DM (insumo del informe IEEE)
 ├── tests/            # Pruebas
 ├── Fruits/           # Dataset (ignorado en Git)
 ├── requirements.txt
 └── README.md
 ```
+
+> **Flujo de trabajo:** los **notebooks** contienen el código y las
+> visualizaciones (resultados renderizados inline, no en carpetas aparte); los
+> **reports/** recogen las conclusiones que alimentarán el informe IEEE final; el
+> código reutilizable vive en **src/** y se importa desde los notebooks.
 
 ## Instalación
 

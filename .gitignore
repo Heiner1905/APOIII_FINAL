@@ -24,11 +24,9 @@ dist/
 # --- Jupyter ---
 .ipynb_checkpoints/
 
-# --- Artefactos de experimentos (pesados / regenerables) ---
-# Se ignoran checkpoints y logs; los resultados ligeros (métricas, figuras)
-# pueden versionarse selectivamente con `git add -f` si se desea.
-experiments/checkpoints/
-experiments/logs/
+# --- Artefactos de modelos (pesados / regenerables) ---
+# Los resultados/figuras se renderizan inline en los notebooks; los pesos de
+# modelos (binarios) no se versionan.
 *.h5
 *.keras
 *.pkl
@@ -46,3 +44,4 @@ data/processed/
 *.npy
 *.npz
 /Docs
+/reports
