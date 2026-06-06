@@ -67,8 +67,10 @@ Fruits/
 │   ├── evaluation/   # Validación y métricas
 │   ├── utils/        # Funciones auxiliares
 │   └── main.py       # Punto de entrada
+├── app/              # Interfaz gráfica Streamlit (streamlit_app.py)
 ├── notebooks/        # Notebooks por fase: CÓDIGO + figuras/resultados inline
 ├── reports/          # Conclusiones por fase CRISP-DM (insumo del informe IEEE)
+├── artifacts/        # Modelos y caches entrenados (ignorado en Git)
 ├── tests/            # Pruebas
 ├── Fruits/           # Dataset (ignorado en Git)
 ├── requirements.txt
@@ -87,6 +89,16 @@ python -m venv .venv
 source .venv/bin/activate          # Linux/Mac
 pip install -r requirements.txt
 ```
+
+## Uso de la interfaz gráfica
+
+```bash
+.venv/bin/streamlit run app/streamlit_app.py
+```
+Permite cargar/capturar la imagen de una fruta (fondo simple), elegir la fruta y
+el modelo (SVM o CNN), y muestra la calidad predicha (con probabilidades), el
+tamaño estimado y la segmentación. Requiere los artefactos en `artifacts/`
+(generados por los notebooks 04 y 06).
 
 ## Equipo
 

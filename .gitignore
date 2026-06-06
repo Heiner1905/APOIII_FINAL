@@ -43,5 +43,4 @@ Thumbs.db
 data/processed/
 *.npy
 *.npz
-/Docs
 /reports
