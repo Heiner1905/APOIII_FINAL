@@ -9,6 +9,7 @@
 # =====================================================================
 
 # --- Cómputo numérico y manejo de datos ---
+# numpy acotado a <2.1 por compatibilidad con tensorflow-cpu 2.17.
 numpy>=1.26,<2.1
 pandas>=2.1,<2.3
 
@@ -26,7 +27,9 @@ scikit-learn>=1.4,<1.6     # LogReg, KNN, SVM, RandomForest, GridSearchCV...
 xgboost>=2.0,<2.2
 
 # --- Deep Learning ---
-tensorflow>=2.15,<2.17     # CNN (Keras incluido)
+# Se usa la variante CPU (la máquina de desarrollo no tiene GPU). Para GPU,
+# reemplazar por `tensorflow` con el toolkit CUDA correspondiente.
+tensorflow-cpu>=2.16,<2.18   # CNN (Keras incluido)
 
 # --- Interfaz gráfica (despliegue) ---
 streamlit>=1.31,<1.40
