@@ -4,7 +4,7 @@ Proyecto Final del curso **Algoritmos y Programación III** — Ingeniería de
 Sistemas, Universidad ICESI, semestre **2026-1**.
 
 ## Estado del proyecto
-🟢 **En desarrollo** — Sección 0 (Setup y exploración del dataset) completada.
+✅ **Completado** — Todas las fases CRISP-DM implementadas: EDA, preparación, modelado (SVM, Random Forest, CNN), evaluación con auditoría de fuga y despliegue en GUI Streamlit.
 
 ## Descripción
 
@@ -27,12 +27,10 @@ y de los datos, preparación, modelado, evaluación y despliegue.
 
 ## Modelos
 
-- **≥2 modelos de ML tradicional** (con ajuste de hiperparámetros vía
-  validación cruzada / grid search), sobre características extraídas de las
-  imágenes (histogramas de color, HOG, momentos, etc.).
-- **1 modelo de Deep Learning**: CNN pequeña entrenada preferiblemente desde
-  cero (TensorFlow/Keras).
-- Comparación contra una **línea base** y entre modelos.
+- **Línea base** (clasificador por clase mayoritaria).
+- **Random Forest** y **SVM-RBF** con GridSearchCV sobre características HSV + HOG (1.860 dims).
+- **CNN** pequeña entrenada desde cero (TensorFlow/Keras).
+- **Mejor modelo:** SVM-RBF con **Macro-F1 = 0,957** en test; recall de clase `Bad` = 0,90.
 
 ## Dataset
 
@@ -59,7 +57,7 @@ Fruits/
 
 ```
 .
-├── Docs/             # Lineamientos oficiales, rúbrica, plantilla IEEE (no versionado)
+├── Informe Final/    # Informe IEEE entregable (v2 formato, v3 humanizado)
 ├── src/              # Código fuente reutilizable (helpers importados por los notebooks)
 │   ├── data/         # Carga e indexado del dataset (dataset.py), preprocesamiento
 │   ├── models/       # Definición de arquitecturas
@@ -102,11 +100,14 @@ tamaño estimado y la segmentación. Requiere los artefactos en `artifacts/`
 
 ## Equipo
 
-| Nombre | Correo / Usuario |
-|--------|------------------|
-| _(por completar)_ | _(por completar)_ |
+| Nombre | Código |
+|--------|--------|
+| Heiner Danit Rincón Carrillo | A00402510 |
+| Ruben Dario Marquinez Rincón | A00401286 |
+| Simon Reyes Riveros | A00400880 |
+| Juan David Ocampo Martinez | A00401856 |
 
-- **Profesor:** _(por completar)_
+Universidad ICESI — Ingeniería de Sistemas — Algoritmos y Programación III, 2026-1.
 
 ## Licencia
 
