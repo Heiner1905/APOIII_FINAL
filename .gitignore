@@ -44,3 +44,14 @@ data/processed/
 *.npy
 *.npz
 /reports
+
+# --- Artefactos de salida (regenerables con notebooks) ---
+/artifacts/
+
+# --- Archivos de presentación / grabación de video (internos) ---
+*.pptx
+build_presentation.py
+Guion_por_Diapositiva.md
+Plan_Grabacion_Video.md
+presentation_assets/
+~$*
