@@ -60,7 +60,7 @@ if img is not None:
     pred = max(proba, key=proba.get)
 
     col1, col2 = st.columns(2)
-    col1.image(img, caption="Imagen de entrada", use_container_width=True)
+    col1.image(img, caption="Imagen de entrada", use_column_width=True)
     with col2:
         st.metric("Calidad predicha", pred)
         st.metric("Tamaño estimado", size["size"].capitalize())
@@ -76,6 +76,6 @@ if img is not None:
     overlay = base.copy()
     overlay[~mask] = (overlay[~mask] * 0.3).astype(np.uint8)  # atenuar el fondo
     st.image(overlay, caption="Fruta segmentada (fondo atenuado)",
-             use_container_width=True)
+             use_column_width=True)
 else:
     st.info("⬅️ Sube o captura una imagen para comenzar el análisis.")
